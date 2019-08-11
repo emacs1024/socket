@@ -192,7 +192,7 @@ std::string Utility::bigint2string(int64_t l)
         str = (char) (a + 48) + str;
         tmp /= 10;
     }
-    if (!str.size())
+    if (str.empty())
     {
         str = "0";
     }
@@ -210,7 +210,7 @@ std::string Utility::bigint2string(uint64_t l)
         str = (char) (a + 48) + str;
         tmp /= 10;
     }
-    if (!str.size())
+    if (str.empty())
     {
         str = "0";
     }
@@ -250,7 +250,7 @@ std::string Utility::rfc1738_encode(const std::string& src)
     std::string dst;
     for (char i : src)
     {
-        unsigned char c = static_cast<unsigned char>(i);
+        auto c = static_cast<unsigned char>(i);
         if (isalnum(c))
         {
             dst += c;
@@ -300,7 +300,7 @@ std::string Utility::rfc1738_decode(const std::string& src)
 } // rfc1738_decode
 
 
-bool Utility::isIpv4(const std::string&)
+bool Utility::isIpv4(const std::string& str)
 {
     int dots = 0;
     // %! ignore :port?
@@ -319,7 +319,7 @@ bool Utility::isIpv4(const std::string&)
 }
 
 
-bool Utility::isIpv6(const std::string&)
+bool Utility::isIpv6(const std::string& str)
 {
     size_t qc = 0;
     size_t qd = 0;
