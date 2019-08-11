@@ -84,7 +84,7 @@ bool Ipv6Address::Resolve(const std::string& hostname, struct in6_addr& a)
 {
     struct sockaddr_in6 sa;
     memset(&a, 0, sizeof(a));
-    if (Utility::isipv6(hostname))
+    if (Utility::isIpv6(hostname))
     {
         if (!Utility::u2ip(hostname, sa, AI_NUMERICHOST))
             return false;

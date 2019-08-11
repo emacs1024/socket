@@ -281,7 +281,7 @@ void ResolvSocket::OnDetached()
 #endif
             if (m_query == "gethostbyaddr")
             {
-                if (Utility::isipv4( m_data ))
+                if (Utility::isIpv4(m_data))
                 {
                     struct sockaddr_in sa;
                     if (!Utility::u2ip(m_data, sa, AI_NUMERICHOST))
@@ -304,7 +304,7 @@ void ResolvSocket::OnDetached()
                 else
 #ifdef ENABLE_IPV6
 #ifdef IPPROTO_IPV6
-                    if (Utility::isipv6( m_data ))
+                    if (Utility::isIpv6(m_data))
                     {
                         struct sockaddr_in6 sa;
                         if (!Utility::u2ip(m_data, sa, AI_NUMERICHOST))

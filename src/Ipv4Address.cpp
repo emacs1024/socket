@@ -92,7 +92,7 @@ bool Ipv4Address::Resolve(const std::string& hostname, struct in_addr& a)
 {
     struct sockaddr_in sa;
     memset(&a, 0, sizeof(a));
-    if (Utility::isipv4(hostname))
+    if (Utility::isIpv4(hostname))
     {
         if (!Utility::u2ip(hostname, sa, AI_NUMERICHOST))
             return false;

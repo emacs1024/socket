@@ -188,18 +188,17 @@ public:
     /**
      * Checks whether a string is a valid ipv4/ipv6 ip number.
      */
-    static bool isipv4(const std::string&);
+    static bool isIpv4(const std::string&);
 
     /**
      * Checks whether a string is a valid ipv4/ipv6 ip number.
      */
-    static bool isipv6(const std::string&);
+    static bool isIpv6(const std::string&);
 
     /**
      * Hostname to ip resolution ipv4, not asynchronous.
      */
     static bool u2ip(const std::string&, ipaddr_t&);
-
     static bool u2ip(const std::string&, struct sockaddr_in& sa, int ai_flags = 0);
 
 #ifdef ENABLE_IPV6

@@ -300,7 +300,7 @@ std::string Utility::rfc1738_decode(const std::string& src)
 } // rfc1738_decode
 
 
-bool Utility::isipv4(const std::string& str)
+bool Utility::isIpv4(const std::string&)
 {
     int dots = 0;
     // %! ignore :port?
@@ -319,7 +319,7 @@ bool Utility::isipv4(const std::string& str)
 }
 
 
-bool Utility::isipv6(const std::string& str)
+bool Utility::isIpv6(const std::string&)
 {
     size_t qc = 0;
     size_t qd = 0;
@@ -672,7 +672,7 @@ bool Utility::u2ip(const std::string& host, struct sockaddr_in& sa, int ai_flags
     memset(&sa, 0, sizeof(sa));
     sa.sin_family = AF_INET;
 #ifdef NO_GETADDRINFO
-    if ((ai_flags & AI_NUMERICHOST) != 0 || isipv4(host))
+    if ((ai_flags & AI_NUMERICHOST) != 0 || isIpv4(host))
     {
         Parse pa((char *) host.c_str(), ".");
         union
@@ -770,7 +770,7 @@ bool Utility::u2ip(const std::string& host, struct sockaddr_in6& sa, int ai_flag
     memset(&sa, 0, sizeof(sa));
     sa.sin6_family = AF_INET6;
 #ifdef NO_GETADDRINFO
-    if ((ai_flags & AI_NUMERICHOST) != 0 || isipv6(host))
+    if ((ai_flags & AI_NUMERICHOST) != 0 || isIpv6(host))
     {
         std::list<std::string> vec;
         size_t x = 0;

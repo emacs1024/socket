@@ -308,7 +308,7 @@ bool TcpSocket::Open(const std::string& host, port_t port)
     if (IsIpv6())
     {
 #ifdef ENABLE_RESOLVER
-        if (!Handler().ResolverEnabled() || Utility::isipv6(host) )
+        if (!Handler().ResolverEnabled() || Utility::isIpv6(host) )
         {
 #endif
             in6_addr a;
@@ -329,7 +329,7 @@ bool TcpSocket::Open(const std::string& host, port_t port)
 #endif
 #endif
 #ifdef ENABLE_RESOLVER
-    if (!Handler().ResolverEnabled() || Utility::isipv4(host) )
+    if (!Handler().ResolverEnabled() || Utility::isIpv4(host) )
     {
 #endif
         ipaddr_t l;
